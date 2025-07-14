@@ -1,0 +1,13 @@
+FROM ubuntu:latest
+
+WORKDIR /app
+COPY ./ .
+#RUN echo "Hello-world..."
+#RUN echo "Executed Successfully...."
+
+USER root
+RUN chmod +x script.bash
+
+USER nobody
+ENTRYPOINT ["./script.bash"]
+
